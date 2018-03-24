@@ -11,7 +11,9 @@ import Foundation
 
 
 class InterfaceController: WKInterfaceController {
-
+    @IBOutlet var todaysDateLabel: WKInterfaceDate!
+    @IBOutlet var myTimer: WKInterfaceTimer!
+    
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
         
@@ -27,5 +29,19 @@ class InterfaceController: WKInterfaceController {
         // This method is called when watch view controller is no longer visible
         super.didDeactivate()
     }
-
+    @IBAction func startTapped() {
+        var currentDateTime = NSDate()
+        myTimer.setDate(currentDateTime as Date)
+        myTimer.start()
+    }
+    
+    @IBAction func stopTapped() {
+        myTimer.stop()
+    }
+    
+    func startTimer() {
+        var currentDateTime = NSDate()
+        myTimer.setDate(currentDateTime as Date)
+        myTimer.start()
+    }
 }
