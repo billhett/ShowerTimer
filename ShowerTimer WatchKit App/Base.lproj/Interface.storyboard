@@ -18,6 +18,7 @@
                             <dateFormatterStyle key="dateStyle" short="YES"/>
                             <dateFormatterStyle key="timeStyle" short="YES"/>
                         </dateLabel>
+                        <label width="1" alignment="left" text="Label" textAlignment="center" id="OPg-uB-rvK"/>
                         <timer width="1" alignment="left" textAlignment="center" id="QaH-5x-QmT">
                             <fontDescription key="font" type="system" pointSize="40"/>
                         </timer>
@@ -36,6 +37,7 @@
                     </items>
                     <connections>
                         <outlet property="myTimer" destination="QaH-5x-QmT" id="OuA-jh-Vp5"/>
+                        <outlet property="showerDayLabel" destination="OPg-uB-rvK" id="6BF-bo-LDS"/>
                         <outlet property="todaysDateLabel" destination="Zxb-rC-Aje" id="3Kc-r1-sPY"/>
                     </connections>
                 </controller>

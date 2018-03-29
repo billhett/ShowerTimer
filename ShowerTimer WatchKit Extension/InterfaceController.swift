@@ -8,16 +8,30 @@
 
 import WatchKit
 import Foundation
+import UIKit
 
 
 class InterfaceController: WKInterfaceController {
     @IBOutlet var todaysDateLabel: WKInterfaceDate!
     @IBOutlet var myTimer: WKInterfaceTimer!
+    @IBOutlet var showerDayLabel: WKInterfaceLabel!
     
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
-        
-        // Configure interface objects here.
+        let currentDate = NSDate()
+
+        let myday = Date()
+        let cal = Calendar.current
+        let dayofyear = cal.ordinality(of: .day, in: .year, for: myday)
+        //showerDayLabel.setText("Day of Year: \(dayofyear!)")
+        if dayofyear!%2 == 0{
+            
+            showerDayLabel.setTextColor(UIColor.green)
+            showerDayLabel.setText("A long Shower")
+        } else {
+            showerDayLabel.setTextColor(UIColor.red)
+            showerDayLabel.setText("Not a long Shower")
+        }
     }
     
     override func willActivate() {
